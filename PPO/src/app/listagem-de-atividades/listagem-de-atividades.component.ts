@@ -158,6 +158,8 @@ ArrayAdministrativo=[];
 administrativoToEdit: Administrativo;
 chTotalDeAdministrativo=0;
 
+ArrayEstados=[];
+
 chTotal=0;
 
 
@@ -222,7 +224,18 @@ chTotal=0;
       }
         }
     });
-
+    this.estadoPit.getEstadoDoPit().subscribe(estados =>{  
+      this.ArrayEstados=estados;
+      for(var cont=0;cont<=this.ArrayEstados.length;cont++){
+        if(this.ArrayEstados[cont].emailProfessor==this.email && this.ArrayEstados[cont].periodo==this.periodo && this.ArrayEstados[cont].ano==this.ano){
+          this.estadoPit.estadoDoPitParaCorrecao=this.ArrayEstados[cont];
+          break;
+        }else{
+          this.estadoPit.estadoDoPitParaCorrecao=null
+        }
+      }
+    
+    });
     this.administrativoService.getAdministrativo().subscribe(administrativo =>{
       this.ArrayAdministrativo= administrativo;
       for(var cont=0;cont<=this.ArrayAdministrativo.length;cont++){
@@ -250,6 +263,11 @@ telaPit(){
 enviarParaAnalise(){
   this.estado.ano=this.periodoService.ano;
   this.estado.periodo=this.periodoService.periodoPeriodo;
+  var excluir=this.estadoPit.estadoDoPitParaCorrecao
+  if(excluir!=null){
+    this.estadoPit.deleteEstadoDoPit(excluir);
+  }
+
   this.estadoPit.addEstadoDoPit(this.estado);
   this.router.navigate([ '/finalizacao']);
 }
