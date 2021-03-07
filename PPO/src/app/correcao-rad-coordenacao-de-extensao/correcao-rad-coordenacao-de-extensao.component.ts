@@ -14,20 +14,20 @@ export class CorrecaoRadCoordenacaoDeExtensaoComponent implements OnInit {
   ArrayEstados=[];
   arrayExtensao=[];
   constructor(public extensaoService:ExtensaoService ,public estadoDoRad:EstadoDoRadService,public usuarioService:UsuarioService, public router:Router) { }
-
+ 
   ngOnInit(): void {
    this.estadoDoRad.getEstadoDoRad().subscribe(estados =>{  
     this.ArrayEstados=estados;
   });
   this.extensaoService.getExtensao().subscribe(extensao =>{  
     this.arrayExtensao=extensao;
-
+ 
       
   });
  
-
+ 
   }
-
+ 
   telaCorrecao(email,periodo,ano){
     this.estadoDoRad.emailParaCorrecao=email;
     this.estadoDoRad.periodoParaCorrecao=periodo;
@@ -40,7 +40,5 @@ export class CorrecaoRadCoordenacaoDeExtensaoComponent implements OnInit {
    }
     this.router.navigate([ '/correcaoRad']);
   }
-
-
 
 }

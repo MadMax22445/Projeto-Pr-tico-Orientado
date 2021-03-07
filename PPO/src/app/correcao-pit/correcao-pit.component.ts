@@ -271,11 +271,11 @@ console.log(this.arrayExtensaoTrue.length)
 }if(this.usuarioTipo==6){
   this.estado.enviado=false;
   this.estado.aprovadoExtensao=true;
-  if(this.arrayPesquisaTrue.length<=0){
+  
     this.estadoDoRad.ano=this.periodoService.ano
   this.estadoDoRad.periodo=this.periodoService.periodoPeriodo
   this.estadoRadService.addEstadoDoRad(this.estadoDoRad);
-  }
+  
   this.router.navigate([ '/CorrecaoPitCoordenacaoDeExtensao']);
 }
 
