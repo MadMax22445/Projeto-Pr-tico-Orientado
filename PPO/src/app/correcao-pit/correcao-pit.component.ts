@@ -185,6 +185,7 @@ chTotal=0;
 
 
   enviarCorrecaoParaProfessor(){
+     console.log("comentar")
     this.comentario.documento='pit'
     this.comentario.ano=this.periodoService.ano;
     this.comentario.periodo=this.periodoService.periodoPeriodo;
