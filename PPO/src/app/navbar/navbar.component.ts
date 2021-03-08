@@ -20,6 +20,7 @@ export class NavbarComponent implements OnInit {
    posicao4;
   posicao5;
   posicao6;
+  posicao7;
   link1;
   link2;
   entrarSair : boolean;
@@ -31,6 +32,10 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   
 
+  }
+  linkStatusDocumento(){
+    this.router.navigate([ '/EstatusDocumento']);
+  
   }
   linkQuadroDeAvisos(){
     this.router.navigate([ '/quadroDeAvisos']);
@@ -147,6 +152,7 @@ this.posicao5="Cadastrar Componente Currícular"
   this.posicao4="Comentários do Pit"
   this.posicao5="Comentários do Rad"
   this.posicao6="Documentos Aprovados"
+  this.posicao7="Status dos Documentos"
 }if(a==3){
   this.posicao1="Quadro de Avisos";
   this.posicao2="Plano Individual de Trabalho"
@@ -214,6 +220,8 @@ if(posicao=="Relatório de Atividades Desenvolvidas"){
     this.correcaoRadCoordenadorDePesquisa()
   }if(posicao=="Relatório de Atividades Desenvolvidas   "){
     this.correcaoRadCoordenadorDeExtensao()
+  }if(posicao=="Status dos Documentos"){
+    this.linkStatusDocumento()
   }
 
   

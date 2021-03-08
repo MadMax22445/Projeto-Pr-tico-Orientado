@@ -62,8 +62,10 @@ import { CorrecaoPitCoordenacaoDeExtensaoComponent } from './correcao-pit-coorde
 import { CorrecaoRadCoordenacaoDeExtensaoComponent } from './correcao-rad-coordenacao-de-extensao/correcao-rad-coordenacao-de-extensao.component';
 import { CorrecaoPitCoordenacaoDePesquisaComponent } from './correcao-pit-coordenacao-de-pesquisa/correcao-pit-coordenacao-de-pesquisa.component';
 import { CorrecaoRadCoordenacaoDePesquisaComponent } from './correcao-rad-coordenacao-de-pesquisa/correcao-rad-coordenacao-de-pesquisa.component';
+import { EstatusDocumentoComponent } from './estatus-documento/estatus-documento.component';
 
 const routes: Routes = [
+  {path : 'EstatusDocumento', component : EstatusDocumentoComponent },
   {path : 'CorrecaoRadCoordenacaoDePesquisa', component : CorrecaoRadCoordenacaoDePesquisaComponent },
   {path : 'CorrecaoPitCoordenacaoDePesquisa', component : CorrecaoPitCoordenacaoDePesquisaComponent },
   {path : 'CorrecaoRadCoordenacaoDeExtensao', component : CorrecaoRadCoordenacaoDeExtensaoComponent },
@@ -135,7 +137,8 @@ const routes: Routes = [
     CorrecaoPitCoordenacaoDeExtensaoComponent,
     CorrecaoRadCoordenacaoDeExtensaoComponent,
     CorrecaoPitCoordenacaoDePesquisaComponent,
-    CorrecaoRadCoordenacaoDePesquisaComponent
+    CorrecaoRadCoordenacaoDePesquisaComponent,
+    EstatusDocumentoComponent
   ],
   imports: [
     BrowserModule,
