@@ -11,15 +11,21 @@ export class EditorQuadroDeAvisosComponent implements OnInit {
     aviso:'',
     
   }
-
+ArrayAvisos=[];
   constructor(public avisosService:AvisosService) { }
 
   ngOnInit(): void {
-    
+    this.avisosService.getAvisos().subscribe(componente =>{  
+      this.ArrayAvisos=componente;
+    });
     
   }
   postarAviso(){
     this.avisosService.addAviso(this.aviso);
   }
+
+ deleteAvisos(aviso){
+  this.avisosService.deleteAvisos(aviso);
+ }
 
 }

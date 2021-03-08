@@ -14,25 +14,51 @@
   <body>
     
        <app-navbar></app-navbar>
-       <div class="card green">
-        <div class="card-action center-align ">
-            <h3>Adicionar Informes</h3>
-            </div>
-       </div>
-       <br>
-       <div class="card center-align arredondar">
-       
-          <form (ngSubmit)="postarAviso()" >
-          <textarea [(ngModel)]="aviso.aviso" class="textarea white" name="textarea"></textarea>
-             
-              <input type="submit" value="Enviar"  name="enviar"class="btn black" >
-          
-      </form>
-    </div>
+       <div class="card">
+        <div class="card-action center-align green">
+          <h3>Cadastro de Componentes Curriculares</h3>
+        </div>
+        <div class="car-content">
+         
+        
+    <form (ngSubmit)="postarAviso()" >
+      <BR>
+      <h6>DIGITE AQUI:</h6>
+      <textarea [(ngModel)]="aviso.aviso" class="textarea white" name="textarea"></textarea>
+         <br>
+          <input type="submit" value="Enviar"  name="enviar"class="btn black" >
       
-    
+  </form>
+</div>
+</div>
 
    
+
+
+
+<div class="card">
+  <div class="card-action center-align green">
+    <h3>Lista de Avisos</h3>
+  </div>
+<div *ngIf="ArrayAvisos?.length > 0;else noAtividades">
+  <ul *ngFor="let aviso of ArrayAvisos" class="collection">
+    <ul class="collection-atividade">
+      <li><a class="titulo">Aviso:</a> {{aviso.aviso}}   
+
+            <br>
+            <button (click)="deleteAvisos(aviso)" class="btn red">Deletar Aviso</button>
+          </li>
+      </ul>
+ 
+    </ul>
+
+</div>
+</div>
+<ng-template #noAtividades>
+  <hr>
+  <h5>Não há avisos cadastrados</h5>
+</ng-template>
+
 </body>
 </html>
 

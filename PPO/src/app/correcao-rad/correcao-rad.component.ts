@@ -196,21 +196,27 @@ chTotal=0;
     }if(this.usuarioTipo==4){
       this.estado.enviado=false;
       this.estado.aprovadoDirecaoDeEnsino=false;
-
+      this.estado.aprovadoGeral=false;
       if(this.arrayExtensaoTrue.length==0){
-        this.estado.aprovadoExtensao=true;
+        this.estado.aprovadoExtensao=false;
       }if(this.arrayPesquisaTrue.length==0){
-        this.estado.aprovadoPesquisa=true
+        this.estado.aprovadoPesquisa=false
       }
 
       this.router.navigate([ '/CorrecaoRadDirecaoDeEnsino']);
     }if(this.usuarioTipo==5){
       this.estado.enviado=false;
+      this.estado.aprovadoExtensao=false;
       this.estado.aprovadoPesquisa=false;
+      this.estado.aprovadoDirecaoDeEnsino=false;
+      this.estado.aprovadoGeral=false;
       this.router.navigate([ '/CorrecaoRadCoordenacaoDePesquisa']);
     }if(this.usuarioTipo==6){
       this.estado.enviado=false;
       this.estado.aprovadoExtensao=false;
+      this.estado.aprovadoPesquisa=false;
+      this.estado.aprovadoDirecaoDeEnsino=false;
+      this.estado.aprovadoGeral=false;
       this.router.navigate([ '/CorrecaoRadCoordenacaoDeExtensao']);
     }
 

@@ -31,11 +31,11 @@ export class ComentariosService {
 
   
    deleteComentario(comentario:Comentario){
-      this.comentarioDoc=this.afs.doc(`comentario/${comentario.id}`);
+      this.comentarioDoc=this.afs.doc(`comentarios/${comentario.id}`);
       this.comentarioDoc.delete();
    }
    updateComentario(comentario:Comentario){
-     this.comentarioDoc=this.afs.doc(`comentario/${comentario.id}`);
+     this.comentarioDoc=this.afs.doc(`comentarios/${comentario.id}`);
      this.comentarioDoc.update(comentario);
    }
  
