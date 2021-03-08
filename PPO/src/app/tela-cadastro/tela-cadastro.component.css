@@ -18,7 +18,10 @@ background: #4ca75b;
 }
 
 
-
+.secondary-content{
+  border:0px;
+ background-color: white;
+}
 
 
 

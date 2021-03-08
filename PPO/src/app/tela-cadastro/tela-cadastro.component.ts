@@ -59,6 +59,55 @@ export class TelaCadastroComponent implements OnInit {
   }}
 
 
+
+
+  editState:boolean =false;
+  usuarioToEdit: Usuario;
+
+
+  deleteUsuario( event, usuario :Usuario){
+    this.clearState();
+    this.usuarioService.deleteUsuario(usuario);
+}
+
+editUsuario( event, usuario :Usuario){
+this.editState=true;
+this.usuarioToEdit=usuario;
+}
+
+clearState(){
+  this.editState=false;
+  this.usuarioToEdit=null;
+}
+
+updateUsuario(usuario :Usuario){
+
+  if(this.usuario.nome!='' && this.usuario.tipoDeUser !='' && this.usuario.email !='' && this.usuario.senha !='' && this.usuario.confirsenha !='' ){
+    const{usuario}= this
+       if(usuario.senha !== usuario.confirsenha){
+         
+         return alert("As senhas não conferem");
+       }
+   try{
+
+    this.usuarioService.updateUsuario(this.usuario);
+    this.clearState();
+
+ 
+    alert("Usuário editado com sucesso!");
+   } catch (error) { 
+      console.error(error); 
+      return alert(error);
+    }
+  
+  
+  }
+
+
+}
+
+
+
 }
 
 

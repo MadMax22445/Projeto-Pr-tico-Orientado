@@ -17,6 +17,7 @@ nome;
   usuario :Usuario;
   tipoDeUser:"";
   nomeCoordenador="";
+  usuarioDoc: AngularFirestoreDocument<Usuario>;
   usuariosCollection: AngularFirestoreCollection<Usuario>;
   usuarios: Observable<Usuario[]>;
   constructor(public afs: AngularFirestore, public afAuth: AngularFireAuth) {
@@ -44,6 +45,15 @@ nome;
   addUsuario(usuario: Usuario) {
     this.usuariosCollection.add(usuario);
   }
+  deleteUsuario(usuario:Usuario){
+    this.usuarioDoc=this.afs.doc(`usuarios/${usuario.id}`);
+    this.usuarioDoc.delete();
+ }
+ updateUsuario(usuario:Usuario){
+   this.usuarioDoc=this.afs.doc(`usuarios/${usuario.id}`);
+   this.usuarioDoc.update(usuario);
+ }
+
   auth() {
    return this.afAuth.auth;
   }
