@@ -26,22 +26,27 @@
 
   
  
-   <div *ngIf="ArrayEstadosDoPit?.length > 0;else noAtividades">
-    <div *ngFor="let pit of ArrayEstadosDoPit" >
-      <ul *ngIf="pit.emailProfessor==email" class="collection">
+   <div *ngIf="ArrayEstadosDoPitPegar?.length > 0;else noAtividades">
+    <div *ngFor="let pit of ArrayEstadosDoPitPegar" >
+      
+      <ul  class="collection">
+      
           <div class="row" >
             <div class="col s12 m6">
              <div class="card darken">
         
         PIT
         <br>
-        Ano:{{pit.ano}}
+        Ano: {{pit.ano}}
         <br>
         Perídodo:{{pit.periodo}}
+        
         <br>
         _______________________________________________________________________________________________________
         <br>
         Status Coordenador de Curso: {{pit.aprovadoGeral}}
+  
+         
         <br>
         Status Direção de Ensino: {{pit.aprovadoDirecaoDeEnsino}}
         <br>
@@ -51,10 +56,11 @@
       </div>
     </div>
     </div>
+  
         </ul>
         </div>
   </div>
-  
+
 
   <ng-template #noAtividades>
   <hr>
@@ -72,9 +78,10 @@
    </div>
 
    
-   <div *ngIf="ArrayEstadosDoRad?.length > 0;else noAtividades">
-    <div *ngFor="let rad of ArrayEstadosDoRad" >
-      <ul *ngIf="rad.emailProfessor==email" class="collection">
+   <div *ngIf="ArrayEstadosDoRadPegar?.length > 0;else noAtividades">
+    <div *ngFor="let rad of ArrayEstadosDoRadPegar" > 
+      <ul class="collection">
+      
           <div class="row" >
             <div class="col s12 m6">
              <div class="card darken">

@@ -45,17 +45,7 @@ constructor(public periodoService:PeriodoService,public usuarioService:UsuarioSe
   }
 
 adicionarAnoePeriodo(){
-this.aulasService.ano=this.periodo.ano;
-this.apoioAoEnsinoService.ano=this.periodo.ano;
-this.pesquisaService.ano=this.periodo.ano
-this.extensaoService.ano=this.periodo.ano
-this.administrativoService.ano=this.periodo.ano
 
-this.aulasService.periodo=this.periodo.periodo;
-this.apoioAoEnsinoService.periodo=this.periodo.periodo;
-this.pesquisaService.periodo=this.periodo.periodo
-this.extensaoService.periodo=this.periodo.periodo
-this.administrativoService.periodo=this.periodo.periodo
 
 this.periodoService.ano=this.periodo.ano;
 this.periodoService.periodoPeriodo=this.periodo.periodo;

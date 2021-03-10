@@ -32,6 +32,7 @@ import { PeriodoService } from '../services/periodo.service';
 })
 export class TelaPitComponent implements OnInit {
 //---------------------------Nome do professor---------------------------------- //
+ativar;
   nomeDeUsuario=this.usuarioService.nome;
   email=this.usuarioService.email;
   componentesCurricularesEnviar:string='';

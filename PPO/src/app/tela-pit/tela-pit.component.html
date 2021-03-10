@@ -66,7 +66,7 @@
       <h3>Atividades de Apoio ao Ensino</h3>
     </div>
     <br><br>
-
+     
     <form  (ngSubmit)="onSubmitApoioAoEnsino()" class="col s6">
       <div>
         <p>Atividade : </p>
@@ -76,7 +76,13 @@
           <option *ngFor="let atividade of ArrayAtivDeApoioAoEnsino">
             {{atividade.nome}}
           </option>
+          
         </select>
+        <div *ngIf="apoioAoEnsino.atividade=='Outros'" >
+          <p>tue</p>
+          <input value=true [(ngModel)]="ativar"  name="boolean">
+          </div>
+
         <br><br>
         <p>C.H Semanal: </p>
 
@@ -112,6 +118,7 @@
           <option *ngFor="let atividade of ArrayAtivDePesquisa">
             {{atividade.nome}}
           </option>
+       
         </select>
         <br>
         <p>C.H Semanal : </p>
@@ -143,6 +150,7 @@
           <option *ngFor="let atividade of ArrayAtivDeExtensao">
             {{atividade.nome}}
           </option>
+         
         </select>
         <p>Tipo de Participação : </p>
         <input type="text" name="participacao" [(ngModel)]="extensao.participacao">
@@ -188,6 +196,7 @@
           <option *ngFor="let atividade of ArrayAtivAdministrativo">
             {{atividade.nome}}
           </option>
+         
         </select>
         <br>
         <p>Portaria : </p>
