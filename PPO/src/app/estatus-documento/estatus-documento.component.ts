@@ -108,7 +108,10 @@ export class EstatusDocumentoComponent implements OnInit {
         }
       
         console.log( this.ArrayEstadosDoRadPegar[cont])
+
       }
+
+      
     }
     });
   }
