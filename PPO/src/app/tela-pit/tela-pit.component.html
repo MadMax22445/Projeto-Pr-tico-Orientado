@@ -78,6 +78,9 @@
           </option>
           
         </select>
+        
+        <br>
+        <button class="btn green" type="button" (click)='AdicionarAtvApoio()'>Adicionar atividade de apoio</button>
         <div *ngIf="apoioAoEnsino.atividade=='Outros'" >
           <p>tue</p>
           <input value=true [(ngModel)]="ativar"  name="boolean">
@@ -120,6 +123,9 @@
           </option>
        
         </select>
+
+        <br>
+        <button class="btn green" type="button" (click)='AdicionarAtvPesquisa()'>Adicionar atividade de pesquisa</button>
         <br>
         <p>C.H Semanal : </p>
         <input value={{pesquisa.chSemanal}} [(ngModel)]="pesquisa.chSemanal" name="chSemanal">
@@ -152,6 +158,8 @@
           </option>
          
         </select>
+        <br>
+        <button class="btn green" type="button" (click)='AdicionarAtvExtensao()'>Adicionar atividade de apoio</button>
         <p>Tipo de Participação : </p>
         <input type="text" name="participacao" [(ngModel)]="extensao.participacao">
         <br>
@@ -198,6 +206,9 @@
           </option>
          
         </select>
+
+        <br>
+        <button class="btn green" type="button" (click)='AdicionarAtvAdministrativo()'>Adicionar atividade de apoio</button>
         <br>
         <p>Portaria : </p>
         <input name="portaria" [(ngModel)]="administrativo.portaria">
